@@ -1,0 +1,142 @@
+body {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/540/538/540/old-travel-photography-wallpaper-preview.jpg");
+  background-size: cover;
+  font-family: "Times New Roman", Times, serif;
+  position: relative; /* Necesario para posicionar elementos hijos sobre el fondo */
+  color: white;
+}
+/* el título "MUSICA URBANA" tiene cambio de letra y un margen para centrarlo o ubicarlo más a la derecha*/
+#titulo {
+  margin: 0px 0px 20px 500px;
+}
+/* titulo1 cambia el "DETOX" tiene un ESPACIADO de 30px. en el texto tiene SUBRAYADO y CAMBIO TAMAÑO LETRA y MARGEN para centrasrlo a la derecha */
+#titulo1 {
+  gap: 10px;
+  text-decoration: underline;
+  font-size: 20px;
+  margin: 20px 560px;
+}
+
+.texto {
+  gap: 40px;
+  font-size: 18px;
+  margin: auto 270px auto;
+  text-align: end;
+}
+img {
+  width: 40vw;
+  margin: 10px 420px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+#discografias {
+  color: white;
+  font-size: 20px;
+  margin: 10px 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.albums {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.albums img {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #e0c097;
+  border-radius: 50%;
+  margin: 0% 80px;
+}
+
+.sidebar {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -30px;
+  padding: 10px;
+  border: 2px solid #e0c097;
+  width: 160px;
+  height: 752px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  width: 165px;
+}
+
+.sidebar-menu li {
+
+  color: white;
+  margin: 40px auto;
+  text-align: end;
+  border: 2px solid #e0c097;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  cursor: pointer;
+}
+#img {
+  width: 75px;
+  height: 75px;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+.user-info {
+  text-align: center;
+  padding: 20px 0;
+}
+
+#nuevoAlbum {
+  background-color: grey;
+  text-decoration: none;
+  color: black;
+  border-radius: 2px;
+  border: 2px double black;
+  margin: 5px;
+  padding: 2px;
+}
+#division2 {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid #e0c097;
+  color: white;
+  border-right: 0px;
+  border-left: 0px;
+  font-size: 15px;
+  padding: 8px;
+}
+
+.estrellita {
+  position: relative;
+  top: -180;
+  top: -135px;
+  right: 75px;
+  font-size: 24px;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  padding: 1px;
+  font-weight: 100;
+}
+
+.trash {
+  color: white;
+  position: relative;
+  top: 145px;
+  right: 35px;
+  font-size: 24px;
+}

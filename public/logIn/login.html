@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>LogIn</title>
+  </head>
+  <body>
+    <div class="id1">
+      <h3 class="registro">Iniciar Sesión</h3>
+      <!-- <div class="form"> -->
+        <form action="https://formspree.io/f/mleybjyz" method="post">
+          <label for="email">
+            Email:
+            <input
+              type="text"
+              name="email"
+              placeholder="usuario@gmail.com"
+              required
+            />
+          </label>
+          <br />
+          <label for="passw"
+            >Contraseña:
+            <input
+              type="password"
+              name="passw"
+              placeholder="***********"
+              required
+            />
+          </label>
+          <br />
+          <input class="boton" type="submit" />
+        </form>
+      </div>
+      <div id="registrate">
+        <p>¿Aún no sos miembro?</p>
+        <a id="botonCuenta" href="../signUp/signup.html">Crea una cuenta</a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./login.js"></script>
+  </body>
+</html>

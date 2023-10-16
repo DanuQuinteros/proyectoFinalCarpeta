@@ -1,0 +1,90 @@
+body {
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/540/538/540/old-travel-photography-wallpaper-preview.jpg");
+  background-size: cover;
+  font-family: "Times New Roman", Times, serif;
+  position: relative; /* Necesario para posicionar elementos hijos sobre el fondo */
+  color: white;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -30px;
+  padding: 10px;
+  border: 2px solid #e0c097;
+  height: 752px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 0px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+  width: 165px;
+}
+
+  .sidebar-menu li {
+    margin: 40px auto;
+    text-align: end;
+    border: 2px solid #e0c097;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    cursor: pointer;
+  }
+#img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50px;
+}
+
+.user-info {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.titulo1 {
+  gap: 20px;
+  text-decoration: underline;
+  font-size: 30px;
+  margin: 20px 418px;
+}
+
+.texto {
+  gap: 40px;
+  font-size: 20px;
+  margin: auto 240px auto;
+  text-align: end;
+}
+
+.playlist {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.playlist li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  width: 45%;
+  color: black;
+}
+.tituloCancion {
+  flex-grow: 1;
+}
+.duracionCancion {
+  margin-right: 100px;
+}
+
+.iconosCancion i {
+  margin-left: 20px;
+  margin-right: 40px;
+  cursor: pointer;
+}

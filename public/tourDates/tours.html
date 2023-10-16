@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/385479e3e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Tours y Fechas</title>
+  </head>
+  <body>
+    <div id="usuario">
+      <img
+        id="logo"
+        src="https://www.cmtv.com.ar/tapas-cd/0663409001604511771.webp"
+        alt="Natalie Perez"
+      />
+      <span id="bienvenido">Hola Usuario! </span>&nbsp; &nbsp;
+      <i class="ticket"></i>
+    </div>
+    <h1>Tour y Fechas:</h1>
+    <div class="contenedorPadre">
+      <ul class="contenedorHijos" style="list-style: none">
+        <li>
+          <span class="diaEvento"> Jueves 07 Septiembre </span>
+          <span class="lugar"> Córdoba </span>
+          <button id="Cordoba"
+            onclick="getTickets(`Cordoba`, `Adquirir Tickets`)"
+            class="EscucharEvento"
+          >
+            Adquirir Tickets
+          </button>
+        </li>
+        <li>
+          <span class="diaEvento"> Viernes 08 de Septiembre </span>
+          <span class="lugar"> Buenos Aires </span>
+          <button id="BuenosAires" onclick="getTickets(`Buenos Aires`)" class="EscucharEvento">
+            Agotadas
+          </button>
+        </li>
+        <li>
+          <span class="diaEvento"> Jueves 21 de Septiembre </span>
+          <span class="lugar"> Mendoza </span>
+          <button id="Mendoza" onclick="getTickets(`Mendoza`)" class="EscucharEvento">
+            Agotadas
+          </button>
+        </li>
+        <li>
+          <span class="diaEvento"> Sábado 23 de Septiembre </span>
+          <span class="lugar"> Tucuman </span>
+          <button id="Tucuman"
+            onclick="getTickets(`Tucuman`, `Adquirir Tickets`)"
+            class="EscucharEvento"
+          >
+            Adquirir Tickets
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./tours.js"></script>
+  </body>
+</html>
