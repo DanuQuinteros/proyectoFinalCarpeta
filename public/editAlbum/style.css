@@ -40,7 +40,7 @@ body::before {
   align-items: center;
 
 } */
-.id2 {
+.form-container {
   margin: 40px auto 10px;
   width: 350px;
   height: 380px;
@@ -53,7 +53,7 @@ body::before {
   font-size: 15px;
   line-height: 20px;
 }
-.id2 input {
+.form-container input {
   margin: 0px;
   width: 221px;
   height: 28px;
@@ -78,8 +78,14 @@ body::before {
   border: 1px solid white;
   border-radius: 5px;
   text-decoration: solid;
+  /* text-align: center; */
   font-weight: bold;
   font-size: 18px;
+  /* padding: 7px; */
+  width: 115px;
+  text-align: center;
+  gap: 63px;
+  margin: 10px 70px 10px 72px;
 }
 .boton:hover {
   background-color: white;
@@ -98,7 +104,7 @@ body::before {
   font-size: 20px;
   padding: 8px;
 }
-#botonCuenta {
+/* #botonCuenta {
   background-color: white;
   color: black;
   padding: 5px;
@@ -108,12 +114,23 @@ body::before {
 #botonCuenta:hover {
   background-color: black;
   color: white;
-}
+} */
 #textarea1 {
   width: 175px;
   height: 60px;
 }
-
+.form-group {
+  margin: 5px 10px;
+  /* text-align: center; */
+  display: flex;
+  gap: 17px;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  /* text-decoration: solid; */
+  text-shadow: aqua;
+  font-size: 18px;
+}
 .add {
   display: flex;
   flex-direction: column;

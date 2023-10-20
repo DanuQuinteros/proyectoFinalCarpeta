@@ -7,7 +7,7 @@ const url =
 const path = require("path");
 
 const routes = require("./routes/index");
-app.use(express.static(path.join(__dirname, "public2")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 
 app.use("/", routes);

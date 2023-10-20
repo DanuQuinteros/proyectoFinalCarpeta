@@ -40,7 +40,7 @@ body::before {
   justify-content: center;
   align-items: center;
 }
-.form-container{
+.form-container {
   margin: 40px auto 10px;
   width: 355px;
   height: 460px;
@@ -68,7 +68,7 @@ body::before {
   line-height: 20px;
 } */
 .form-container input {
-  margin: 10px;
+  margin: 5px;
   width: 221px;
   height: 24px;
   display: flex;
@@ -76,7 +76,19 @@ body::before {
   justify-content: center;
   align-items: center;
 }
-#registro {
+.form-group {
+  margin: 5px 10px;
+  /* text-align: center; */
+  display: flex;
+  /* gap: 17px; */
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  /* text-decoration: solid; */
+  text-shadow: aqua;
+  font-size: 18px;
+}
+.registro {
   margin-bottom: 10px;
   padding-bottom: 10px;
   font-size: 30px;
@@ -86,7 +98,7 @@ body::before {
   box-sizing: border-box;
 }
 
-.add-button{
+.add-button {
   background-color: #e0c097;
   color: black;
   border: 1px solid white;
@@ -100,7 +112,7 @@ body::before {
   border: 2px solid #e0c097;
   color: black;
 }
-.cancel-button{
+.cancel-button {
   background-color: #e0c097;
   color: black;
   border: 1px solid white;
@@ -113,6 +125,9 @@ body::before {
   background-color: white;
   border: 2px solid #e0c097;
   color: black;
+}
+.button-group {
+  margin: 0px 43px;
 }
 
 #registrate {
@@ -142,7 +157,6 @@ body::before {
   width: 175px;
   height: 60px;
 }
-
 
 .sidebar {
   display: flex;
@@ -182,7 +196,3 @@ body::before {
   text-align: center;
   padding: 20px 0;
 }
-
-
-
-

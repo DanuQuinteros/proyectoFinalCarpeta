@@ -1,4 +1,4 @@
-const tituloAlbum = document.querySelector(".titulo1");
+const tituloAlbum = document.querySelector("#titulo1");
 const descripcionAlbum = document.querySelector(".texto");
 const ul = document.querySelector(".playlist");
 const editAlbum = document.querySelector("#editAlbum");
@@ -20,8 +20,8 @@ function renderAlbum(album) {
   const h2 = document.createElement("h2");
 
   // agregamos los estilos
-  h1.classList.add("titulo");
-  h2.classList.add("descripcion");
+  h1.classList.add("titulo1");
+  h2.classList.add("texto");
 
   // agregamos la info del album
   h1.textContent = album.titulo;
@@ -36,7 +36,7 @@ function renderAlbum(album) {
     redirect(album._id, "../editAlbum/editAlbum.html");
   });
   addSong.addEventListener("click", () => {
-    console.log("hice click");
+    console.log("=====> YA HICE CLICK!!!!!!");
     redirect(album._id, `../addSong/addSong.html`);
   });
 }

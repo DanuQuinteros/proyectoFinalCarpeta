@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/385479e3e1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./style.css">
-    <title>Detox</title>
-</head>
-<body>
-    <title>Natalie Perez</title>
-    <h2 class="titulo1">DETOX:</h2>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/385479e3e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Album</title>
+  </head>
+  <body>
     <div class="sidebar">
       <div class="user-info">
-        <img id="img"
-          src="../imagenes/imgGuitarra.jpg"
-          alt="Imagen Guitarra"
-        />
+        <img id="img" src="../imagenes/imgGuitarra.jpg" alt="Imagen Guitarra" />
         <p>Bruno Dursi</p>
       </div>
       <ul class="sidebar-menu">
         <li id="otherAlbums">Otros álbunes</li>
-        <li id="editAlbum"> Editar álbum </li>
-        <li id="addSongs"> Agregar canciones </li>
+        <li id="editAlbum">Editar álbum</li>
+        <li id="addSongs">Agregar canciones</li>
         <li id="logOut">Cerrar sesión</li>
       </ul>
     </div>
 
-    <div class="texto">
-        <span>La artista habla sobre el trasfondo del disco, que acaba de presentar. Etiquetas, prejuicios y presiones son algunas de las cosas de las que Natalie logró desprenderse con su nuevo álbum.</span>
-        <br />
+    <div class="content">
+      <div class="descripcion">
+        <h1 id="titulo1"></h1>
+        <div class="texto"></div>
       </div>
-      <h3 class="titulo1"> Canciones: </h3>
+      <h1>Canciones:</h1>
+
       <ul class="playlist">
-          <li><span class="tituloCancion">Detox </span>
-            <span class="duracionCancion"> 3:44</span>
-            <span class="iconosCancion">
-              <i class="fas fa-trash-alt"></i>
-              <i class="fas fa-music"></i>
-            </span>
-          </li>
+        <li><span class="tituloCancion"></span>
+          <span class="duracionCancion"></span>
+          <span class="iconosCancion">
+            <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-music"></i>
+          </span>
+        </li>
+        <!--
+      
           <li><span class="tituloCancion">Penita de mi corazón </span>
             <span class="duracionCancion"> 3:05</span>
             <span class="iconosCancion">
@@ -61,9 +62,12 @@
               <i class="fas fa-music"></i>
             </span>
           </li>
+      </ul> -->
       </ul>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-      <script src="album.js"></script>
-</body>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="album.js"></script>
+  </body>
 </html>

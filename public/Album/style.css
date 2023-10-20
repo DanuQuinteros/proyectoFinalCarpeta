@@ -25,15 +25,15 @@ body {
   width: 165px;
 }
 
-  .sidebar-menu li {
-    margin: 40px auto;
-    text-align: end;
-    border: 2px solid #e0c097;
-    border-left: 0;
-    border-right: 0;
-    border-top: 0;
-    cursor: pointer;
-  }
+.sidebar-menu li {
+  margin: 40px auto;
+  text-align: end;
+  border: 2px solid #e0c097;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  cursor: pointer;
+}
 #img {
   width: 75px;
   height: 75px;
@@ -46,25 +46,27 @@ body {
 }
 
 .titulo1 {
-  gap: 20px;
   text-decoration: underline;
   font-size: 30px;
-  margin: 20px 418px;
 }
 
+
 .texto {
-  gap: 40px;
   font-size: 20px;
-  margin: auto 240px auto;
-  text-align: end;
+  text-align: center;
+}
+.content {
+  margin-left: 225px;
+  padding: 0;
 }
 
 .playlist {
   list-style-type: none;
-  padding: 0;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: baseline;
 }
 .playlist li {
   display: flex;
@@ -73,7 +75,8 @@ body {
   background-color: #f0f0f0;
   padding: 10px;
   border-radius: 5px;
-  width: 45%;
+  width: 50%;
+  height: 20px;
   color: black;
 }
 .tituloCancion {
