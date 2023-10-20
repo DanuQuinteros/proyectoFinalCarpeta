@@ -1,16 +1,17 @@
-
 const query = window.location.search.split("=");
 const idAlbum = query[1];
 let album;
 const agregarSong = document.querySelector("#agregar");
+const cancelar = document.querySelector("#cancelar");
+
 const redirect = (id) => {
-  window.location.href = `./album/album.html?album=${id}`;
+  window.location.href = `../Album/album.html?album=${id}`;
 };
 
 // Generamos una funcion para guardar los valores que ingresa el usuario
 function getInputValues() {
   // Obtener los input del form
-  const titleInput = document.getElementById("titulo"); 
+  const titleInput = document.getElementById("titulo");
   const duracionInput = document.getElementById("duracion");
   const linkInput = document.getElementById("link");
 
@@ -44,6 +45,7 @@ const addSong = async (e) => {
   try {
     await axios.put(`http://localhost:3000/song/${idAlbum}`, objectToSend);
     await swal("cancion agregada correctamente");
+    window.location.href = (`../album/album.html?album=${idAlbum}`);
   } catch (error) {
     swal("Error al agregar la cancion");
   }
@@ -51,4 +53,9 @@ const addSong = async (e) => {
 
 agregarSong.addEventListener("click", (e) => {
   addSong(e);
+});
+
+
+cancelar.addEventListener("click" , () => {
+  window.location.href =(`../album/album.html?album=${idAlbum}`);
 });

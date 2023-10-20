@@ -3,6 +3,8 @@ const descripcionAlbum = document.querySelector(".texto");
 const ul = document.querySelector(".playlist");
 const editAlbum = document.querySelector("#editAlbum");
 const addSong = document.querySelector("#addSongs");
+const otherAlbums = document.querySelector("#otherAlbums");
+const logOut = document.querySelector("#logOut");
 
 const query = window.location.search.split("=");
 const idAlbum = query[1];
@@ -32,12 +34,22 @@ function renderAlbum(album) {
   divTituloDescripcion.appendChild(h2);
 
   // agregamos los addEventListener a los botones de la sidebar
+  otherAlbums.addEventListener("click", () => {
+    console.log("=====> YA HICE CLICK!!!!!!");
+    redirect(album._id, "../index.html");
+  });
+
   editAlbum.addEventListener("click", () => {
+    console.log("=====> YA HICE CLICK!!!!!!");
     redirect(album._id, "../editAlbum/editAlbum.html");
   });
   addSong.addEventListener("click", () => {
     console.log("=====> YA HICE CLICK!!!!!!");
     redirect(album._id, `../addSong/addSong.html`);
+  });
+  logOut.addEventListener("click", () => {
+    console.log("=====> YA HICE CLICK!!!!!!");
+    redirect(album._id, `../logIn/login.html`);
   });
 }
 
