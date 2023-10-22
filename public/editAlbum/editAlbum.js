@@ -3,7 +3,7 @@ function getInputValues() {
   // Obtener los input del form
   const titleInput = document.getElementById("titulo");
   const descriptionInput = document.getElementById("descripcion");
-  const imageInput = document.getElementById("img");
+  const imageInput = document.getElementById("image");
 
   // Obtener los valores de los campos de entrada
   const titleValue = titleInput.value;
@@ -42,7 +42,7 @@ const changeAlbum = async (e) => {
       icon: "success",
       button: "Continuar",
     });
-    window.location.href = `../../public/index.html`;
+    window.location.href = `http://localhost:3000`;
   } catch (error) {
     console.log(error);
   }
