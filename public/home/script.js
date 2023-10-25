@@ -30,20 +30,22 @@ const divAlbums = document.querySelector(".albums");
 const renderAlbums = (album) => {
   const div = document.createElement("div");
   const imgAlbum = document.createElement("img");
-  const iconTrash = document.createElement("i")
+  const iconTrash = document.createElement("i");
 
-  div.classList.add("albums");
-  let urlPortada = album.portada ? album.portada : "https://imgur.com/0uSALUr.png";
+  div.classList.add("albumsAgregados");
+  let urlPortada = album.portada
+    ? album.portada
+    : "https://imgur.com/0uSALUr.png";
 
   imgAlbum.setAttribute("src", urlPortada);
   iconTrash.classList.add("fas");
   iconTrash.classList.add("fa-trash-alt");
   iconTrash.classList.add("trash");
 
-  imgAlbum.addEventListener("click" , () =>{
-    console.log(album._id);
+  imgAlbum.addEventListener("click", () => {
+    // console.log(album._id);
     redirect(album._id);
-  })
+  });
   div.appendChild(imgAlbum);
   div.appendChild(iconTrash);
   divAlbums.appendChild(div);
@@ -62,7 +64,7 @@ const getAlbums = async () => {
         deleteAlbum(respuesta.data[i]._id);
       });
     }
-} catch (error) {
+  } catch (error) {
     console.log(error.message);
   }
 };
@@ -73,12 +75,13 @@ const deleteAlbum = async (album) => {
   try {
     await axios.delete(`../../album/${album}`);
     await swal("album eliminado correctamente");
-    const albums = document.querySelectorAll(".albums");
+    const albums = document.querySelectorAll(".albumsAgregados");
     albums.forEach((album) => album.remove());
     const respuesta = await axios.get("../../album/todos");
     respuesta.data.map((album) => {
       renderAlbums(album);
     });
+    // window.location.reload();
   } catch (error) {
     console.log(error);
   }

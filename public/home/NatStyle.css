@@ -42,10 +42,43 @@ img {
 }
 
 .albums {
+
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* max-width: 70%; */
+  flex-wrap: wrap;
+  margin: 15px;
+  position: relative;
+  left: 56px;
+
+
+
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  position: relative;
+  left: 56px; */
+
+
+
+  /* display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  position: relative;
+  left: 160px; */
+}
+
+.albumsAgregados {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* max-width: 70%px; */
+  flex-wrap: wrap;
+  margin: 15px;
 }
 
 .albums img {
@@ -65,10 +98,11 @@ img {
   padding: 10px;
   border: 2px solid #e0c097;
   width: 160px;
-  height: 752px;
+  height: 377px;
   border-top: 0px;
   border-bottom: 0px;
   border-left: 0px;
+
 }
 
 .sidebar-menu {
@@ -78,7 +112,6 @@ img {
 }
 
 .sidebar-menu li {
-
   color: white;
   margin: 40px auto;
   text-align: end;
