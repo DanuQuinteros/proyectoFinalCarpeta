@@ -81,7 +81,8 @@ const deleteAlbum = async (album) => {
     respuesta.data.map((album) => {
       renderAlbums(album);
     });
-    // window.location.reload();
+    // el Window.location.reload() Lo utilizo porque luego de eliminar un álbum, no me permitía eliminar otro consecutivo sin refrescar la página antes de forma "manual" asique lo que hice fue agregar éste código para que se recargue de manera automàtica luego de eliminar cualquier álbum.. 
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }
