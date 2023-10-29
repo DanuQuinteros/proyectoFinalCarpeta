@@ -55,18 +55,6 @@ const addSong = async (e) => {
   }
 };
 
-// const addSong = async (e) => {
-//   e.preventDefault();
-//   const objectToSend = getInputValues();
-//   try {
-//     await axios.put(`http://localhost:3000/song/${idAlbum}`, objectToSend);
-//     await swal("cancion agregada correctamente");
-//     window.location.href = `../album/album.html?album=${idAlbum}`;
-//   } catch (error) {
-//     console.error("Error al agregar la canción:", error);
-//     swal("Error al agregar la cancion");
-//   }
-// };
 
 agregarSong.addEventListener("click", (e) => {
   addSong(e);

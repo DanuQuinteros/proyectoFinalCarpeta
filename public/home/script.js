@@ -1,25 +1,4 @@
-// // const { log } = require("console");
 
-// const discosFavoritos = ["detox"];
-
-// function addFavorites(favoritos) {
-//   const imgs = document.querySelectorAll(".albums img");
-
-//   imgs.forEach((img) => {
-//     if (favoritos.includes(img.alt)) {
-//       const icon = document.createElement("i");
-//       icon.classList.add("fa-solid");
-//       icon.classList.add("fa-star");
-//       icon.classList.add("estrellita");
-//             icon.classList.add("favoritos");
-//       img.parentNode.appendChild(icon);
-//       img.parentElement.classList.add("favorita");
-//       // console.log("Agregado a favoritos");
-//     }
-//   });
-// }
-
-// addFavorites(discosFavoritos);
 
 const redirect = (id) => {
   window.location.href = `../album/album.html?album=${id}`;

@@ -17,29 +17,6 @@ body::before {
   height: 100%;
   z-index: -1;
 }
-/* .id2{
-  margin: 40px auto 10px;
-  width: 350px;
-  height: 380px;
-  border: #E0C097 solid 5px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 15px;
-  line-height: 30px;
-}
-.id1 input{
-  margin: 0px;
-  width: 175px;
-  height: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-} */
 .form-container {
   margin: 40px auto 10px;
   width: 350px;
@@ -104,30 +81,18 @@ body::before {
   font-size: 20px;
   padding: 8px;
 }
-/* #botonCuenta {
-  background-color: white;
-  color: black;
-  padding: 5px;
-  border-radius: 5px;
-  border: 2px solid #b97a;
-}
-#botonCuenta:hover {
-  background-color: black;
-  color: white;
-} */
+
 #textarea1 {
   width: 175px;
   height: 60px;
 }
 .form-group {
   margin: 5px 10px;
-  /* text-align: center; */
   display: flex;
   gap: 17px;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  /* text-decoration: solid; */
   text-shadow: aqua;
   font-size: 18px;
 }

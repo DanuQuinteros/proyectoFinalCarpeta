@@ -5,11 +5,9 @@ body {
   position: relative; /* Necesario para posicionar elementos hijos sobre el fondo */
   color: white;
 }
-/* el título "MUSICA URBANA" tiene cambio de letra y un margen para centrarlo o ubicarlo más a la derecha*/
 #titulo {
   margin: 0px 0px 20px 500px;
 }
-/* titulo1 cambia el "DETOX" tiene un ESPACIADO de 30px. en el texto tiene SUBRAYADO y CAMBIO TAMAÑO LETRA y MARGEN para centrasrlo a la derecha */
 #titulo1 {
   gap: 10px;
   text-decoration: underline;
@@ -46,37 +44,16 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* max-width: 70%; */
   flex-wrap: wrap;
   margin: 15px;
   position: relative;
   left: 56px;
-
-
-
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 18px;
-  position: relative;
-  left: 56px; */
-
-
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  position: relative;
-  left: 160px; */
 }
 
 .albumsAgregados {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* max-width: 70%px; */
   flex-wrap: wrap;
   margin: 15px;
 }

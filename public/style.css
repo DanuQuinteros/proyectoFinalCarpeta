@@ -54,19 +54,6 @@ body::before {
   line-height: 20px;
 }
 
-/* .id2 {
-  margin: 40px auto 10px;
-  width: 350px;
-  height: 380px;
-  border: #e0c097 solid 5px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 15px;
-  line-height: 20px;
-} */
 .form-container input {
   margin: 5px;
   width: 221px;
@@ -78,13 +65,10 @@ body::before {
 }
 .form-group {
   margin: 5px 10px;
-  /* text-align: center; */
   display: flex;
-  /* gap: 17px; */
   flex-direction: column;
   align-content: center;
   align-items: center;
-  /* text-decoration: solid; */
   text-shadow: aqua;
   font-size: 18px;
 }
