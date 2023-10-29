@@ -1,4 +1,5 @@
 const buttonAdd = document.querySelector(".add-button");
+const buttonCancel = document.querySelector(".cancel-button");
 
 // Generamos una funcion para guardar los valores que ingresa el usuario
 function getInputValues() {
@@ -37,13 +38,17 @@ const addAlbum = async (e) => {
       icon: "success",
       button: "Continuar",
     });
-    window.location.href = ("http://localhost:3000");
+    window.location.href = "../index.html";
   } catch (error) {
     console.log(error);
-    swal("No se puedo agregar al album, intentelo nuevamente");
+    swal("No se pudo agregar el álbum! Vuelve a intentarlo");
   }
 };
 
 buttonAdd.addEventListener("click", (e) => {
   addAlbum(e);
+});
+
+buttonCancel.addEventListener("click", () => {
+  window.location.href = `../index.html`;
 });

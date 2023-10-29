@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="signUp.css" />
     <title>sign up</title>
   </head>
   <body>
-    <div class="id2">
+    <div class="id1">
       <h1 class="registro">Registro</h1>
-      <form action="" method="post">
+      <form action="" method="POST">
         <label for="nombre"
           >Nombre:
           <input
             class="signUpData"
             type="text"
-            id="name"
+            id="nombre"
             name="nombre"
             placeholder="Nombre"
             required
@@ -51,7 +51,7 @@
           <input
             class="signUpData"
             type="password"
-            id="passw"
+            id="password"
             name="contraseña"
             id="contraseña"
             placeholder="***********"
@@ -60,9 +60,11 @@
         </label>
         <br />
         <input class="boton" type="submit" />
+ 
       </form>
-    </div>
-
-    <script src="./signScript.js"></script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./signUp.js"></script>
   </body>
 </html>

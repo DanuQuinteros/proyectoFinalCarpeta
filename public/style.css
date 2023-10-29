@@ -196,3 +196,18 @@ body::before {
   text-align: center;
   padding: 20px 0;
 }
+
+.boton {
+  background-color: #e0c097;
+  color: black;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-decoration: solid;
+  font-weight: bold;
+  font-size: 18px;
+}
+.boton:hover {
+  background-color: white;
+  border: 2px solid #e0c097;
+  color: black;
+}

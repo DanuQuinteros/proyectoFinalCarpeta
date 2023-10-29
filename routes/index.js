@@ -1,10 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/users");
+const user = require("../models/users");
 const Album = require("../models/albums");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 
 const saltRounds = 10;
+const secret = "brunodursi";
+
 
 const hashPassword = async (password) => {
   const hash = await bcrypt.hash(password, saltRounds);
@@ -29,21 +33,44 @@ router.post("/createuser", async (req, res) => {
   }
 });
 
-// Recibir un Id por params ,retornando data del usuario y excluír password.
-router.get("/usuario/:id", async (req, res) => {
+// Ruta para el logIn
+router.post("/login", async (req, res) => {
   try {
-    let respuesta = await User.findById(req.params.id);
-    res.status(200).send({
-      usuario: {
-        nombre: respuesta.nombre,
-        apellido: respuesta.apellido,
-        email: respuesta.email,
-      },
-    });
+    const email = req.body.email;
+    const password = req.body.password;
+    const user = await user.findOne({ email: email });
+    console.log(user);
+    const match = await bcrypt.compare(password, user.password);
+    console.log(match);
+    const payload = { email, nombre: user.nombre, apellido: user.apellido };
+    if (match) {
+      const token = jwt.sign(payload, secret);
+      res.cookie("token", token);
+      res.status(200).send(payload);
+    } else {
+      res.status(401).send({ message: "La contraseña no coincide" });
+    }
   } catch (error) {
-    res.status(500).send({ "error al crear el usuario": error });
+    res.status(401).send({ message: error.message });
   }
 });
+
+
+// Recibir un Id por params ,retornando data del usuario y excluír password.
+// router.get("/usuario/:id", async (req, res) => {
+//   try {
+//     let respuesta = await User.findById(req.params.id);
+//     res.status(200).send({
+//       usuario: {
+//         nombre: respuesta.nombre,
+//         apellido: respuesta.apellido,
+//         email: respuesta.email,
+//       },
+//     });
+//   } catch (error) {
+//     res.status(500).send({ "error al crear el usuario": error });
+//   }
+// });
 
 // Editar datos del usuario.
 router.put("/usuario/edit/:id", async (req, res) => {
