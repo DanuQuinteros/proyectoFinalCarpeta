@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const user = require("../models/users");
+const User = require("../models/users");
 const Album = require("../models/albums");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -19,14 +19,14 @@ const hashPassword = async (password) => {
 router.post("/createuser", async (req, res) => {
   const { password, email, nombre, apellido } = req.body;
   const hashed = await hashPassword(password);
-  const user = {
+  const createUser = {
     password: hashed,
     email,
     nombre,
     apellido,
   };
   try {
-    await User.create(user);
+    await User.create(createUser);
     res.status(201).send("Usuario creado correctamente");
   } catch (error) {
     res.status(500).send({ "error al crear el usuario": error });
@@ -38,7 +38,7 @@ router.post("/login", async (req, res) => {
   try {
     const email = req.body.email;
     const password = req.body.password;
-    const user = await user.findOne({ email: email });
+    const user = await User.findOne({ email: email });
     console.log(user);
     const match = await bcrypt.compare(password, user.password);
     console.log(match);
@@ -84,15 +84,38 @@ router.put("/usuario/edit/:id", async (req, res) => {
   }
 });
 
+// agregar album c required
+
 // Agregar album.
-router.post("/album/agregar", async (req, res) => {
+router.post("/album/agregar", [
+  body("nombre").notEmpty(),
+  body("artista").notEmpty(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   try {
     let album = await Album.create(req.body);
     res.status(200).send(album);
   } catch (error) {
-    res.status(500).send({ "error al agregar un album": error });
+    res.status(500).send({ "error al agregar un álbum": error });
   }
 });
+
+
+
+
+// Agregar album.
+// router.post("/album/agregar", async (req, res) => {
+//   try {
+//     let album = await Album.create(req.body);
+//     res.status(200).send(album);
+//   } catch (error) {
+//     res.status(500).send({ "error al agregar un album": error });
+//   }
+// });
 
 // Editar album.
 router.put("/album/:id", async (req, res) => {
