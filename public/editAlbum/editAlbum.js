@@ -34,7 +34,7 @@ const changeAlbum = async (e) => {
   const objectToSend = getInputValues();
   try {
     let album = await axios.put(
-      `http://localhost:3000/album/${idAlbum}`,
+      `../../../album/${idAlbum}`,
       objectToSend
     );
     await swal({
@@ -43,8 +43,22 @@ const changeAlbum = async (e) => {
       icon: "success",
       button: "Continuar",
     });
-    window.location.href = `../index.html`;
+    window.location.href = `../album/album.html?album=${idAlbum}`;
   } catch (error) {
     console.log(error);
   }
 };
+
+const username = document.querySelector("#name");
+
+const onLoad = async () => {
+  try {
+    const response = await axios.get("../../../../me");
+    username.textContent = `${response.data.nombre} ${response.data.apellido}`;
+  } catch (error) {
+    console.log(error);
+    window.location.href = "../logIn/login.html";
+  }
+};
+
+onLoad();

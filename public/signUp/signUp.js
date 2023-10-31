@@ -28,7 +28,7 @@ const userRegister = async (e) => {
   const objectToSend = getInputValues();
   try {
     await axios.post("../../../createuser", objectToSend);
-    window.location.href = `../Login/Login.html`;
+    window.location.href = `../login/Login.html`;
   } catch (error) {
     console.log(error);
   }

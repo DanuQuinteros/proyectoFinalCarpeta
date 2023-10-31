@@ -135,3 +135,17 @@ const deleteSong = async (album, cancion) => {
     console.log(error);
   }
 };
+
+const username = document.querySelector("p");
+
+const onLoad = async () => {
+  try {
+    const response = await axios.get("../../../../me");
+    username.textContent = `${response.data.nombre} ${response.data.apellido}`;
+  } catch (error) {
+    console.log(error);
+    window.location.href = "../logIn/login.html";
+  }
+};
+
+onLoad();

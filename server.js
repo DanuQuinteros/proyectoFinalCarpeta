@@ -15,9 +15,9 @@ const url =
 const path = require("path");
 
 const routes = require("./routes/index");
-app.use(cookieParser());
-app.use(express.json());
 
+app.use(express.json());
+app.use(cookieParser());
 
 app.use(
   express.static("public", {

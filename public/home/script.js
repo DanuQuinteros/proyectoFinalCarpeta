@@ -74,15 +74,20 @@ const buttonLogout = document.querySelector("#logOut");
 
 buttonLogout.addEventListener("click", () => {
   logOut();
-  window.location.href = `../LogIn/login.html`;
+  window.location.href = `../logIn/login.html`;
 });
 
-// Funcion onLoad que vamos a ejecutar ni bien se carga la pagina.
-const username = document.querySelector("#username");
-let user = "";
-const tourDates = document.querySelector("#tour-dates");
-tourDates.addEventListener("click", () => {
-  window.location.href = `./TourDates/TourDates.html?user=${user}`;
-});
+const username = document.querySelector("#name");
 
-onLoad();
+const onLoadPage = async () => {
+  try {
+    const response = await axios.get("../../../../me");
+    username.textContent = `${response.data.nombre} ${response.data.apellido}`;
+  } catch (error) {
+    console.log(error);
+    window.location.href = "../logIn/login.html";
+  }
+};
+
+onLoadPage();
+

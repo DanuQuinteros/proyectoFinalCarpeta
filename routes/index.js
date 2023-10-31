@@ -6,10 +6,8 @@ const Album = require("../models/albums");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-
 const saltRounds = 10;
 const secret = "brunodursi";
-
 
 const hashPassword = async (password) => {
   const hash = await bcrypt.hash(password, saltRounds);
@@ -56,7 +54,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
-
 //ruta par logout
 // Ruta para el logout
 router.post("/logout", async (req, res) => {
@@ -78,7 +75,6 @@ router.get("/me", (req, res) => {
     res.status(401).send(error.message);
   }
 });
-
 
 // Recibir un Id por params ,retornando data del usuario y excluír password.
 router.get("/usuario/:id", async (req, res) => {
@@ -108,25 +104,13 @@ router.put("/usuario/edit/:id", async (req, res) => {
   }
 });
 
-
-
-// agregar album c required
-
-router.post("/album/agregar", [
-  body("title").notEmpty(),
-  body("description").notEmpty(),
-  body("anioLanzamiento").notEmpty(),
-], async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
-
+// Una ruta para agregar un album.
+router.post("/album/agregar", async (req, res) => {
   try {
     let album = await Album.create(req.body);
     res.status(200).send(album);
   } catch (error) {
-    res.status(500).send({ "error al agregar un álbum": error });
+    res.status(500).send({ "error al agregar un album": error });
   }
 });
 
@@ -205,4 +189,3 @@ router.delete("/album/:idAlbum", async (req, res) => {
 });
 
 module.exports = router;
-

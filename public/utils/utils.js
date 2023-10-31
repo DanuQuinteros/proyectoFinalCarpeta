@@ -3,7 +3,7 @@ const onLoad = async () => {
     const response = await axios.get("../../../../me");
     username.textContent = `${response.data.nombre} ${response.data.apellido}`;
   } catch (error) {
-    window.location.href = "../LogIn/login.html";
+    window.location.href = "../logIn/login.html";
   }
 };
 

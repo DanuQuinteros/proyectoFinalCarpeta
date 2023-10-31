@@ -1,3 +1,6 @@
+import { logOut } from "../utils/utils.js";
+const logOutButton = document.querySelector("#logOut");
+
 const query = window.location.search.split("=");
 const idAlbum = query[1];
 let album;
@@ -5,7 +8,7 @@ const agregarSong = document.querySelector("#agregar");
 const cancelar = document.querySelector("#cancelar");
 const editAlbum = document.querySelector("#editAlbum");
 const otherAlbums = document.querySelector("#otherAlbums");
-const logOut = document.querySelector("#logOut");
+
 
 const redirect = (id) => {
   window.location.href = `../Album/album.html?album=${id}`;
@@ -33,7 +36,7 @@ function getInputValues() {
 
 const getAlbum = async () => {
   try {
-    const { data } = await axios.get(`http://localhost:3000/album/${idAlbum}`);
+    const { data } = await axios.get(`../../../album/${idAlbum}`);
     album = data;
   } catch (error) {
     console.log(error);
@@ -46,8 +49,12 @@ const addSong = async (e) => {
   e.preventDefault();
   const objectToSend = getInputValues();
   try {
-    await axios.put(`http://localhost:3000/song/${idAlbum}`, objectToSend);
-    await swal("Canción agregada correctamente");
+    await axios.put(`../../../song/${idAlbum}`, objectToSend);
+    await swal({
+      title: "Canción agregada correctamente!",
+      text: `Canción: ${objectToSend.titulo}`,
+      icon: "success",
+    });
     window.location.href = `../album/album.html?album=${idAlbum}`;
   } catch (error) {
     console.log(error);
@@ -59,6 +66,12 @@ const addSong = async (e) => {
 agregarSong.addEventListener("click", (e) => {
   addSong(e);
 });
+
+logOutButton.addEventListener("click", () => {
+  logOut();
+  window.location.href = "../logIn/login.html";
+});
+
 
 cancelar.addEventListener("click", () => {
   window.location.href = `../album/album.html?album=${idAlbum}`;
@@ -74,7 +87,17 @@ editAlbum.addEventListener("click", () => {
   redirect(album._id, "../editAlbum/editAlbum.html");
 });
 
-logOut.addEventListener("click", () => {
-  console.log("=====> YA HICE CLICK!!!!!!");
-  redirect(album._id, `../logIn/login.html`);
-});
+
+const username = document.querySelector("#name");
+
+const onLoad = async () => {
+  try {
+    const response = await axios.get("../../../../me");
+    username.textContent = `${response.data.nombre} ${response.data.apellido}`;
+  } catch (error) {
+    console.log(error);
+    window.location.href = "../logIn/login.html";
+  }
+};
+
+onLoad();
