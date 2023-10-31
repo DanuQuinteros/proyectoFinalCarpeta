@@ -1,4 +1,5 @@
-
+import { onLoad } from "../utils/utils.js";
+import { logOut } from "../utils/utils.js";
 
 const redirect = (id) => {
   window.location.href = `../album/album.html?album=${id}`;
@@ -66,3 +67,22 @@ const deleteAlbum = async (album) => {
     console.log(error);
   }
 };
+
+// Logout
+
+const buttonLogout = document.querySelector("#logOut");
+
+buttonLogout.addEventListener("click", () => {
+  logOut();
+  window.location.href = `../LogIn/login.html`;
+});
+
+// Funcion onLoad que vamos a ejecutar ni bien se carga la pagina.
+const username = document.querySelector("#username");
+let user = "";
+const tourDates = document.querySelector("#tour-dates");
+tourDates.addEventListener("click", () => {
+  window.location.href = `./TourDates/TourDates.html?user=${user}`;
+});
+
+onLoad();

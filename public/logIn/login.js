@@ -15,10 +15,10 @@ const loginUser = async (e) => {
   getInputValues();
   try {
     const response = await axios.post(
-      "http://localhost:3000/login",
+      "../../../login",
       objectToSend
     );
-    console.log(response, "respuesta");
+    // console.log(response, "respuesta");
     redirect();
   } catch (error) {
     console.log(error.message);
@@ -26,3 +26,35 @@ const loginUser = async (e) => {
 };
 const loginButton = document.querySelector(".boton");
 loginButton.addEventListener("click", (e) => loginUser(e));
+
+
+// const objectToSend = {};
+
+// function getInputValues() {
+//   const inputs = document.querySelectorAll("input");
+//   inputs.forEach((input) => (objectToSend[input.id] = input.value));
+// }
+
+// const redirect = () => {
+//   window.location.href = `../index.html`;
+// };
+
+// const loginUser = async () => {
+//   try {
+//     const response = await axios.post(
+//       "../../../login",
+//       objectToSend
+//     );
+//     redirect();
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// }
+
+// const loginForm = document.querySelector("form");
+
+// loginForm.addEventListener("submit", async (e) => {
+//   e.preventDefault(); // Evita que se envíe el formulario automáticamente
+//   getInputValues();
+//   await loginUser(); // Llama a la función loginUser() para procesar el formulario
+// });

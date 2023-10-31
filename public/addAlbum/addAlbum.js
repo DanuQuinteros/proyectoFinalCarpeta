@@ -29,7 +29,7 @@ const addAlbum = async (e) => {
   const objectToSend = getInputValues();
   try {
     let album = await axios.post(
-      `http://localhost:3000/album/agregar`,
+      `../../../album/agregar`,
       objectToSend
     );
     await swal({

@@ -25,12 +25,12 @@
           src="./imagenes/imgGuitarra.jpg"
           alt="Imagen Guitarra"
         />
-        <p>Bruno Dursi</p>
+        <p id="username"></p>
       </div>
       <ul class="sidebar-menu">
         <li><a style="text-decoration: none; color: white;" href="./addAlbum/addAlbum.html"> Agregar Album </a></li>
-        <li><a style="text-decoration: none; color: white;"  href="./tourDates/tours.html"> Fechas de Tour</a></li>
-        <li><a style="text-decoration: none; color: white;"  href="./logIn/login.html"> Cerrar Sesión</a></li>
+        <li><a style="text-decoration: none; color: white;"  id="tour-dates"> Fechas de Tour</a></li>
+        <li><a style="text-decoration: none; color: white;" id="logOut"> Cerrar Sesión</a></li>
       </ul>
     </div>
 
@@ -82,6 +82,6 @@
     <br />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./home/script.js"></script>
+    <script src="./home/script.js" type="module"></script>
   </body>
 </html>

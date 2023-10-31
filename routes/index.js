@@ -57,21 +57,44 @@ router.post("/login", async (req, res) => {
 });
 
 
+//ruta par logout
+// Ruta para el logout
+router.post("/logout", async (req, res) => {
+  try {
+    res.clearCookie("token");
+    res.sendStatus(204);
+  } catch (error) {
+    res.sendStatus(500);
+  }
+});
+
+// Ruta para restringir el acceso a quienes no se loguean
+router.get("/me", (req, res) => {
+  try {
+    const token = req.cookies.token;
+    const payload = jwt.verify(token, secret);
+    res.send(payload);
+  } catch (error) {
+    res.status(401).send(error.message);
+  }
+});
+
+
 // Recibir un Id por params ,retornando data del usuario y excluír password.
-// router.get("/usuario/:id", async (req, res) => {
-//   try {
-//     let respuesta = await User.findById(req.params.id);
-//     res.status(200).send({
-//       usuario: {
-//         nombre: respuesta.nombre,
-//         apellido: respuesta.apellido,
-//         email: respuesta.email,
-//       },
-//     });
-//   } catch (error) {
-//     res.status(500).send({ "error al crear el usuario": error });
-//   }
-// });
+router.get("/usuario/:id", async (req, res) => {
+  try {
+    let respuesta = await User.findById(req.params.id);
+    res.status(200).send({
+      usuario: {
+        nombre: respuesta.nombre,
+        apellido: respuesta.apellido,
+        email: respuesta.email,
+      },
+    });
+  } catch (error) {
+    res.status(500).send({ "error al crear el usuario": error });
+  }
+});
 
 // Editar datos del usuario.
 router.put("/usuario/edit/:id", async (req, res) => {

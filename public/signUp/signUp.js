@@ -27,7 +27,7 @@ const userRegister = async (e) => {
   e.preventDefault();
   const objectToSend = getInputValues();
   try {
-    await axios.post("http://localhost:3000/createuser", objectToSend);
+    await axios.post("../../../createuser", objectToSend);
     window.location.href = `../Login/Login.html`;
   } catch (error) {
     console.log(error);
