@@ -108,12 +108,14 @@ router.put("/usuario/edit/:id", async (req, res) => {
   }
 });
 
+
+
 // agregar album c required
 
-// Agregar album.
 router.post("/album/agregar", [
-  body("tituloCancion").notEmpty(),
-  body("duracionCancion").notEmpty(),
+  body("title").notEmpty(),
+  body("description").notEmpty(),
+  body("anioLanzamiento").notEmpty(),
 ], async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

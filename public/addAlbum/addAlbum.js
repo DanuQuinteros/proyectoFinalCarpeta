@@ -4,16 +4,16 @@ const buttonCancel = document.querySelector(".cancel-button");
 // Generamos una funcion para guardar los valores que ingresa el usuario
 function getInputValues() {
   // Obtener los input del form
-  const titleInput = document.getElementById("title");
-  const descriptionInput = document.getElementById("description");
-  const imageInput = document.getElementById("image");
-  const anioLanzamientoInput = document.getElementById("anioLanzamiento");
+  const title = document.getElementById("title");
+  const description = document.getElementById("description");
+  const image = document.getElementById("image");
+  const anioLanzamiento = document.getElementById("anioLanzamiento");
 
   // Obtener los valores de los campos de entrada
-  const titleValue = titleInput.value;
-  const descriptionValue = descriptionInput.value;
-  const imageValue = imageInput.value;
-  const anioLanzamientoValue = anioLanzamientoInput.value;
+  const titleValue = title.value;
+  const descriptionValue = description.value;
+  const imageValue = image.value;
+  const anioLanzamientoValue = anioLanzamiento.value;
 
   // Devolver los valores en un objeto
   return {
@@ -28,20 +28,20 @@ const addAlbum = async (e) => {
   e.preventDefault();
   const objectToSend = getInputValues();
   try {
-    let album = await axios.post(
-      `../../../album/agregar`,
-      objectToSend
-    );
+    let album = await axios.post(`../../../album/agregar`, objectToSend);
     await swal({
       title: "Album agregado correctamente!",
       text: `Album: ${album.data.titulo}`,
       icon: "success",
       button: "Continuar",
     });
-    window.location.href = "../index.html";
+    window.location.href = "../";
   } catch (error) {
-    console.log(error);
-    swal("No se pudo agregar el álbum! Vuelve a intentarlo");
+    swal({
+      title: "No se pudo agregar el album, intentelo nuevamente",
+      icon: "warning",
+      text: "Todos los campos deben ser completados",
+    });
   }
 };
 
@@ -52,3 +52,16 @@ buttonAdd.addEventListener("click", (e) => {
 buttonCancel.addEventListener("click", () => {
   window.location.href = `../index.html`;
 });
+
+const username = document.querySelector("p");
+
+const onLoad = async () => {
+  try {
+    const response = await axios.get("../../../../me");
+    username.textContent = `${response.data.nombre} ${response.data.apellido}`;
+  } catch (error) {
+    window.location.href = "../logIn/login.html";
+  }
+};
+
+onLoad();

@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const cookieParser = require("cookie-parser");
+
 const dotenv = require ("dotenv");
 dotenv.config()
 
@@ -13,8 +15,23 @@ const url =
 const path = require("path");
 
 const routes = require("./routes/index");
-app.use(express.static(path.join(__dirname, "public")));
+app.use(cookieParser());
 app.use(express.json());
+
+
+app.use(
+  express.static("public", {
+    setHeaders: (res, path) => {
+      if (path.endsWith(".js")) {
+        res.setHeader("Content-Type", "application/javascript");
+      }
+    },
+  })
+);
+
+// esta linea la pide render para chequear la app 
+app.use("/health", (req, res) => res.sendStatus(200));
+
 
 app.use("/", routes);
 const connectMongo = async () => {
