@@ -33,7 +33,7 @@ const renderAlbums = (album) => {
 
 const getAlbums = async () => {
   try {
-    const respuesta = await axios.get("http://localhost:3000/album/todos");
+    const respuesta = await axios.get("../album/todos");
     console.log(respuesta);
     respuesta.data.map((album) => {
       renderAlbums(album);

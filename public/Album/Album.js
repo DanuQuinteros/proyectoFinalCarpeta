@@ -93,7 +93,7 @@ function renderSongs(album) {
 
 const getAlbum = async () => {
   try {
-    const respuesta = await axios.get(`http://localhost:3000/album/${idAlbum}`);
+    const respuesta = await axios.get(`../../../album/${idAlbum}`);
     // console.log(respuesta);
     renderAlbum(respuesta.data);
     const canciones = respuesta.data.canciones;
@@ -116,11 +116,11 @@ getAlbum();
 const deleteSong = async (album, cancion) => {
   try {
     await axios.put(
-      `http://localhost:3000/song/delete/${album}?idSong=${cancion}`
+      `../../../song/delete/${album}?idSong=${cancion}`
     );
     await swal("cancion eliminada correctamente");
     ul.innerHTML = ""; // limpia la lista actual
-    const respuesta = await axios.get(`http://localhost:3000/album/${idAlbum}`);
+    const respuesta = await axios.get(`../../../album/${idAlbum}`);
     const canciones = respuesta.data.canciones;
     canciones.map((cancion, index) => {
       renderSongs(cancion, index);
