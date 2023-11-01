@@ -32,6 +32,12 @@ app.use(
 // esta linea la pide render para chequear la app 
 app.use("/health", (req, res) => res.sendStatus(200));
 
+// Permitir solicitudes desde el dominio 'https://proyecto-musica.onrender.com'
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://proyecto-musica.onrender.com');
+  next();
+});
+
 
 app.use("/", routes);
 const connectMongo = async () => {
