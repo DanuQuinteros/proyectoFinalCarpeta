@@ -80,7 +80,7 @@ buttonLogout.addEventListener("click", () => {
 
 const username = document.querySelector("#name");
 
-const onLoadPage = async () => {
+const onLoad = async () => {
   try {
     const response = await axios.get("../../../../me");
     username.textContent = `${response.data.nombre} ${response.data.apellido}`;
@@ -90,4 +90,4 @@ const onLoadPage = async () => {
   }
 };
 
-onLoadPage();
+onLoad();

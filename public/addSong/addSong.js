@@ -11,7 +11,7 @@ const otherAlbums = document.querySelector("#otherAlbums");
 
 
 const redirect = (id) => {
-  window.location.href = `../Album/album.html?album=${id}`;
+  window.location.href = `../Album/Album.html?album=${id}`;
 };
 
 // Generamos una funcion para guardar los valores que ingresa el usuario
@@ -55,7 +55,7 @@ const addSong = async (e) => {
       text: `Canción: ${objectToSend.titulo}`,
       icon: "success",
     });
-    window.location.href = `../album/album.html?album=${idAlbum}`;
+    window.location.href = `../Album/Album.html?album=${idAlbum}`;
   } catch (error) {
     console.log(error);
     swal("Error al agregar la canción");
@@ -74,7 +74,7 @@ logOutButton.addEventListener("click", () => {
 
 
 cancelar.addEventListener("click", () => {
-  window.location.href = `../album/album.html?album=${idAlbum}`;
+  window.location.href = `../Album/Album.html?album=${idAlbum}`;
 });
 
 otherAlbums.addEventListener("click", () => {

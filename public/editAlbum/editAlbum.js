@@ -43,7 +43,7 @@ const changeAlbum = async (e) => {
       icon: "success",
       button: "Continuar",
     });
-    window.location.href = `../album/album.html?album=${idAlbum}`;
+    window.location.href = `../Album/Album.html?album=${idAlbum}`;
   } catch (error) {
     console.log(error);
   }
