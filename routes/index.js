@@ -32,17 +32,24 @@ router.post("/createuser", async (req, res) => {
   }
 });
 
+// ruta p/login
+
 // Ruta para el logIn
 router.post("/login", async (req, res) => {
   try {
     const email = req.body.email;
     const password = req.body.password;
     const user = await User.findOne({ email: email });
-    console.log(user);
+
+    if (!user) {
+      res.status(401).send({ message: "El usuario no fue encontrado" });
+      return;
+    }
+
     const match = await bcrypt.compare(password, user.password);
-    console.log(match);
-    const payload = { email, nombre: user.nombre, apellido: user.apellido };
+
     if (match) {
+      const payload = { email, nombre: user.nombre, apellido: user.apellido };
       const token = jwt.sign(payload, secret);
       res.cookie("token", token);
       res.status(200).send(payload);
@@ -53,6 +60,28 @@ router.post("/login", async (req, res) => {
     res.status(401).send({ message: error.message });
   }
 });
+
+// Ruta para el logIn
+// router.post("/login", async (req, res) => {
+//   try {
+//     const email = req.body.email;
+//     const password = req.body.password;
+//     const user = await User.findOne({ email: email });
+//     console.log(user);
+//     const match = await bcrypt.compare(password, user.password);
+//     console.log(match);
+//     const payload = { email, nombre: user.nombre, apellido: user.apellido };
+//     if (match) {
+//       const token = jwt.sign(payload, secret);
+//       res.cookie("token", token);
+//       res.status(200).send(payload);
+//     } else {
+//       res.status(401).send({ message: "La contraseña no coincide" });
+//     }
+//   } catch (error) {
+//     res.status(401).send({ message: error.message });
+//   }
+// });
 
 //ruta par logout
 // Ruta para el logout
