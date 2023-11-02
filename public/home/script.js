@@ -2,7 +2,7 @@ import { onLoad } from "../utils/utils.js";
 import { logOut } from "../utils/utils.js";
 
 const redirect = (id) => {
-  window.location.href = `../album/album.html?album=${id}`;
+  window.location.href = `../Album/Album.html?album=${id}`;
 };
 
 const divAlbums = document.querySelector(".albums");
@@ -24,6 +24,7 @@ const renderAlbums = (album) => {
 
   imgAlbum.addEventListener("click", () => {
     // console.log(album._id);
+    // console.log(album);
     redirect(album._id);
   });
   div.appendChild(imgAlbum);
@@ -61,7 +62,7 @@ const deleteAlbum = async (album) => {
     respuesta.data.map((album) => {
       renderAlbums(album);
     });
-    // el Window.location.reload() Lo utilizo porque luego de eliminar un álbum, no me permitía eliminar otro consecutivo sin refrescar la página antes de forma "manual" asique lo que hice fue agregar éste código para que se recargue de manera automàtica luego de eliminar cualquier álbum.. 
+    // el Window.location.reload() Lo utilizo porque luego de eliminar un álbum, no me permitía eliminar otro consecutivo sin refrescar la página antes de forma "manual" asique lo que hice fue agregar éste código para que se recargue de manera automàtica luego de eliminar cualquier álbum..
     window.location.reload();
   } catch (error) {
     console.log(error);
@@ -90,4 +91,3 @@ const onLoadPage = async () => {
 };
 
 onLoadPage();
-
